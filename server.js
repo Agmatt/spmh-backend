@@ -55,7 +55,7 @@ fastify.post('/api/appointments', async (request, reply) => {
   }
 
   // Success! Redirect the patient back to your Astro frontend success screen
-  return reply.redirect('http://localhost:4321/portal/success');
+  return reply.redirect(`${frontEndUrl}/portal/success`);
 });
 
 // Start up the backend engine
