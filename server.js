@@ -54,8 +54,10 @@ fastify.post('/api/appointments', async (request, reply) => {
       .send({ error: 'Failed to log appointment into database.' });
   }
 
-  // Success! Redirect the patient back to your Astro frontend success screen
-  return reply.redirect(`${frontEndUrl}/portal/success`);
+  console.log(`Redirecting patient safely to: ${frontEndUrl}/portal/success`);
+
+  // Explicitly set the 302 status code before executing the redirect
+  return reply.status(302).redirect(`${frontEndUrl}/portal/success`);
 });
 
 // Start up the backend engine
