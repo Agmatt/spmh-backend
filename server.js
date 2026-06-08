@@ -54,6 +54,8 @@ fastify.post('/api/appointments', async (request, reply) => {
       .send({ error: 'Failed to log appointment into database.' });
   }
 
+const frontEndUrl = process.env.FRONTEND_URL || 'http://localhost:4321';
+
   console.log(`Redirecting patient safely to: ${frontEndUrl}/portal/success`);
 
   // Explicitly set the 302 status code before executing the redirect
